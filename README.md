@@ -8,7 +8,7 @@
 
 *DR. README md* is a simple markdown converter with a couple of extra features. 
 
-*DR. README md* will convert any README file into a index file for that directory. 
+*DR. README md* will convert any README file into a index file for that directory. It does so by creating a cache or build directory and creating a web server. Page edits are live updated to the build directory.
 
 *DR. README md* also has the ability to inject menus, can have the style sheet customized (*with or without SASS*) and uses a global template.
 
@@ -23,11 +23,12 @@ DR. README .md is a node.js app. It requires nodejs > 6.1. It can be pulled via 
 npm install -g dr.readme.md
 ```
 
-Once installed open your browser and drop a README.md into it. File locations are fine.
+1. Once installed go into a directory with a readme.
+2. 
 
-```c
-file:///C:/Users/sfplinternet/Dropbox/Settings/Devices/Windows%2010%20Public%20Library/README.md
-```
+
+
+This will create a hidden directory called `doc` in the readme's directory.
 
 ### Configuration per Project
 
