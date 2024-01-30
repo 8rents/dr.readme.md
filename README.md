@@ -1,66 +1,56 @@
-# *DR. README md*
+# dr.readme.md
 
-> #### *A simple readme reader. Turns a README.md into index.html for each directory. Also has the ability to inject tags and menus into the global template.*
+> #### *A simple readme reader  & writer. Turns a README.md into index.html for each directory. Also has the ability to inject tags and menus into the global template.*
 
 ***
 
 ## About
 
-*DR. README md* is a simple markdown converter with a couple of extra features. 
+*Dr.readme.md* is a simple markdown converter with a couple of extra features. 
 
-*DR. README md* will convert any README file into a index file for that directory. It does so by creating a cache or build directory and creating a web server. Page edits are live updated to the build directory.
+*Dr.readme.md* will convert any README file into a index file for that directory. It does so by creating a cache or build directory and creating a web server. Page edits are live updated to the build directory.
 
-*DR. README md* also has the ability to inject menus, can have the style sheet customized (*with or without SASS*) and uses a global template.
+*Dr.readme.md* also has the ability to inject menus, can have the style sheet customized (*with or without SASS*) and uses a global template.
 
-To ensure backward compatibility, *DR. README md* will only inject into and modify the global template. README files should remain just as they are and not have to be modified to add features.
+To ensure backward compatibility, *Dr.readme.md* will only inject into and modify the global template. README files should remain just as they are and not have to be modified to add features.
 
+## Usage
 
-## Installation 
+DR. README .md is a node.js app. There is an Electron version with a GUI and a Command line utility.
 
-DR. README .md is a node.js app. It requires nodejs > 6.1. It can be pulled via npm, yarn or pnpm.
+### Electron Version
 
-```basic
-npm install -g dr.readme.md
-```
+Can be downloaded from https://github.com/8rents/dr.readme.md/releases.
 
-1. Once installed go into a directory with a readme.
-2. 
+**Once downloaded:**
 
+1. Open the app
+2. select a folder to start or read a project
+3. Click start
 
+This will open up a window. If there is an existing README.md in the folder it will be rendered on screen. If there is no README.md file in that directory, one will be created.	
 
-This will create a hidden directory called `doc` in the readme's directory.
+### Command line utility Through NPM
 
-### Configuration per Project
-
-```npm
-cd root/dir/of/project
-
-doc new
-```
-
-This will create the `.doc` folder in the root of the project.
-
-### **Inside the `.doc` folder**
+Install through NPM, Yarn or PNPM. It should ideally be installed globally.
 
 ```bash
-.doc # Per project hidden folder to customize dr.readme with
-    scss/ # (if) this folder exists (then) use scss.
-          # Otherwise, just write in the styles.css file
-        styles.scss # The global style sheet. styles.css        
-                    #  will be generated from this.
-        0.scss # A sub (included) scss file.
-    styles.css # The stylesheet to render the md files with
-    js/ # Folder to hold js files
-        app.js # The main app javascript file
-    bundle.js # The compiled/bundled production javascript file
-    template.html # The Global HTML template
-    media/ # Folder to hold any assets used in theming
-        logo.png # A hypothetical logo file
+# Install dr.readme.md globally
+npm install -g 8rents/dr.readme.md
+
+# Navigate to a directory that will be 
+# project root(if no README.md exists,
+# one will be created)
+cd to/root/directory
+
+# Start dr.readme.md from this directory
+# (readme & drm are the same command)
+drm start
 ```
 
-## Chrome Plugin
+If no `README.md` exists in that folder a generic one will be created.
 
-There's a cool Chrome plugin called [*"Markdown Reader"*](https://chrome.google.com/webstore/detail/md-reader/medapdbncneneejhbgcjceippjlfkmkg/related). It's got a bit of extensibility to it :)
+### 
 
 
 ***
